@@ -1,14 +1,14 @@
 use sea_orm_migration::prelude::*;
 
 use super::{
-    m20230629_000001_create_well_discovery_config_table::WellDiscoveryConfig,
+    m20230629_000002_create_well_discovery_table::WellDiscovery,
     m20230629_000003_create_client_site_table::ClientSite,
 };
 pub struct Migration;
 
 impl MigrationName for Migration {
     fn name(&self) -> &str {
-        "m20230629_000004_add_fk_client_site_to_wdc"
+        "m20230629_000005_add_fk_client_site_to_wd"
     }
 }
 
@@ -18,11 +18,8 @@ impl MigrationTrait for Migration {
         manager
             .create_foreign_key(
                 ForeignKey::create()
-                    .name("FK_client_site_wdc")
-                    .from(
-                        WellDiscoveryConfig::Table,
-                        WellDiscoveryConfig::ClientSiteId,
-                    )
+                    .name("FK_client_site_wd")
+                    .from(WellDiscovery::Table, WellDiscovery::ClientSiteId)
                     .to(ClientSite::Table, ClientSite::Id)
                     .on_delete(ForeignKeyAction::Cascade)
                     .to_owned(),
@@ -33,8 +30,8 @@ impl MigrationTrait for Migration {
         manager
             .drop_foreign_key(
                 ForeignKey::drop()
-                    .name("FK_client_site_wdc")
-                    .table(WellDiscoveryConfig::Table)
+                    .name("FK_client_site_wd")
+                    .table(WellDiscovery::Table)
                     .to_owned(),
             )
             .await
