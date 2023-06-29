@@ -21,6 +21,18 @@ impl MigrationTrait for Migration {
                             .auto_increment()
                             .primary_key(),
                     )
+                    .col(ColumnDef::new(WellDiscoveryConfig::LogUidWell).string())
+                    .col(ColumnDef::new(WellDiscoveryConfig::LogUidWellbore).string())
+                    .col(ColumnDef::new(WellDiscoveryConfig::LogUid).string())
+                    .col(ColumnDef::new(WellDiscoveryConfig::LogName).string())
+                    .col(ColumnDef::new(WellDiscoveryConfig::IndexType).string())
+                    .col(ColumnDef::new(WellDiscoveryConfig::ObjectGrowing).boolean())
+                    .col(ColumnDef::new(WellDiscoveryConfig::ServiceId).string())
+                    .col(ColumnDef::new(WellDiscoveryConfig::ServiceName).string())
+                    .col(ColumnDef::new(WellDiscoveryConfig::ApiVersion).string())
+                    .col(ColumnDef::new(WellDiscoveryConfig::Endpoint).string())
+                    .col(ColumnDef::new(WellDiscoveryConfig::Username).string())
+                    .col(ColumnDef::new(WellDiscoveryConfig::Password).string())
                     .to_owned(),
             )
             .await
@@ -36,4 +48,16 @@ impl MigrationTrait for Migration {
 pub enum WellDiscoveryConfig {
     Table,
     Id,
+    LogUidWell,
+    LogUidWellbore,
+    LogUid,
+    LogName,
+    IndexType,
+    ObjectGrowing,
+    ServiceId,
+    ServiceName,
+    ApiVersion,
+    Endpoint,
+    Username,
+    Password,
 }
