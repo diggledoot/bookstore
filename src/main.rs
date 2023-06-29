@@ -1,8 +1,8 @@
-mod migrator;
+mod migrations;
 
 use std::error::Error;
 
-use migrator::migrator::Migrator;
+use migrations::migrator::Migrator;
 use sea_orm::Database;
 use sea_orm_migration::MigratorTrait;
 
