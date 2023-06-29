@@ -21,6 +21,7 @@ impl MigrationTrait for Migration {
                             .auto_increment()
                             .primary_key(),
                     )
+                    .col(ColumnDef::new(WellDiscovery::ClientSiteId).string())
                     .col(ColumnDef::new(WellDiscovery::WellUid).string())
                     .col(ColumnDef::new(WellDiscovery::WellName).string())
                     .col(ColumnDef::new(WellDiscovery::WellTimeZone).integer())
@@ -49,6 +50,7 @@ impl MigrationTrait for Migration {
 pub enum WellDiscovery {
     Table,
     Id,
+    ClientSiteId,
     WellUid,
     WellName,
     WellTimeZone,
