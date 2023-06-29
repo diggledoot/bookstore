@@ -23,6 +23,17 @@ impl MigrationTrait for Migration {
                     )
                     .col(ColumnDef::new(WellDiscovery::WellUid).string())
                     .col(ColumnDef::new(WellDiscovery::WellName).string())
+                    .col(ColumnDef::new(WellDiscovery::WellTimeZone).integer())
+                    .col(ColumnDef::new(WellDiscovery::WellboreUid).string())
+                    .col(ColumnDef::new(WellDiscovery::WellboreName).string())
+                    .col(ColumnDef::new(WellDiscovery::LogUid).string())
+                    .col(ColumnDef::new(WellDiscovery::LogName).string())
+                    .col(ColumnDef::new(WellDiscovery::IndexType).string())
+                    .col(ColumnDef::new(WellDiscovery::StartDateTimeIndex).date_time())
+                    .col(ColumnDef::new(WellDiscovery::RigUid).string())
+                    .col(ColumnDef::new(WellDiscovery::RigName).string())
+                    .col(ColumnDef::new(WellDiscovery::Status).string())
+                    .col(ColumnDef::new(WellDiscovery::IndexedOperationUid).string())
                     .to_owned(),
             )
             .await

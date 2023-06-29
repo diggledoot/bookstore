@@ -3,7 +3,7 @@ mod migrations;
 use std::error::Error;
 
 use migrations::migrator::Migrator;
-use sea_orm::{ConnectionTrait, Database, Statement};
+use sea_orm::Database;
 use sea_orm_migration::MigratorTrait;
 
 #[tokio::main]

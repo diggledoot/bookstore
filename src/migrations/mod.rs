@@ -1,3 +1,4 @@
 pub mod m20230629_000001_create_well_discovery_config_table;
 pub mod m20230629_000002_create_well_discovery_table;
+pub mod m20230629_000003_create_client_site_table;
 pub mod migrator;
