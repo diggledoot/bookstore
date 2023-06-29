@@ -1,0 +1,2 @@
+pub mod m20230629_000001_create_well_discovery_config_table;
+pub mod migrator;
