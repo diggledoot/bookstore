@@ -16,8 +16,8 @@ async fn run_migrations() -> Result<(), Box<dyn Error>> {
     dotenvy::dotenv()?;
     let database_url = dotenvy::var("DATABASE_URL")?;
     let db = Database::connect(&database_url).await?;
-    // Migrator::up(&db, None).await?;
-    Migrator::refresh(&db).await?;
+    Migrator::up(&db, None).await?;
+    // Migrator::refresh(&db).await?;
     println!("Migrations ran!");
     Ok(())
 }

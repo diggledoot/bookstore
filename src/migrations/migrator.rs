@@ -4,6 +4,7 @@ pub struct Migrator;
 use super::m20230629_000001_create_well_discovery_config_table;
 use super::m20230629_000002_create_well_discovery_table;
 use super::m20230629_000003_create_client_site_table;
+use super::m20230629_000004_add_fk_client_site_to_wdc;
 
 #[async_trait::async_trait]
 impl MigratorTrait for Migrator {
@@ -12,6 +13,7 @@ impl MigratorTrait for Migrator {
             Box::new(m20230629_000001_create_well_discovery_config_table::Migration),
             Box::new(m20230629_000002_create_well_discovery_table::Migration),
             Box::new(m20230629_000003_create_client_site_table::Migration),
+            Box::new(m20230629_000004_add_fk_client_site_to_wdc::Migration),
         ]
     }
 }

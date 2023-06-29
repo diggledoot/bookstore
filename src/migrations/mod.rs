@@ -1,4 +1,5 @@
 pub mod m20230629_000001_create_well_discovery_config_table;
 pub mod m20230629_000002_create_well_discovery_table;
 pub mod m20230629_000003_create_client_site_table;
+pub mod m20230629_000004_add_fk_client_site_to_wdc;
 pub mod migrator;
